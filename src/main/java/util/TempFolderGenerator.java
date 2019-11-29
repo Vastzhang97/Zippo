@@ -1,6 +1,7 @@
 package util;
 
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 
 /**
  * 生成临时文件
@@ -8,10 +9,10 @@ import java.io.File;
 public class TempFolderGenerator {
 
     private static String prePath = "./临时文件/";
-    private static String path = prePath + "js/operation/qxh/operationlog";
+    private static String suffixPath = prePath + "resources\\META-INF\\resources\\static\\console\\js\\eip\\link\\company";
 
-    public static void main(String[] args) {
-        File file = new File(path);
+    public static void main(String[] args) throws UnsupportedEncodingException {
+        File file = new File(new String(suffixPath.getBytes(), "utf-8"));
         System.out.println(file.mkdirs());
     }
 }
