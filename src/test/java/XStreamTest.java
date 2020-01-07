@@ -1,5 +1,6 @@
 
 import com.thoughtworks.xstream.XStream;
+import org.junit.Test;
 import pojo.Person;
 import pojo.PhoneNumber;
 import util.XstreamUtil;
@@ -11,7 +12,8 @@ import util.XstreamUtil;
  */
 public class XStreamTest {
 
-    public static void test2() throws Exception {
+    @Test
+    public void Object2XML2() throws Exception {
         // 拼接字符串
         StringBuffer sb = new StringBuffer();
         sb.append("<person>");
@@ -32,7 +34,7 @@ public class XStreamTest {
 
     }
 
-    public static void test3() throws Exception {
+    public void Object2XML1() throws Exception {
         Person joe = new Person("Joe", "Walnes");
         joe.setPhone(new PhoneNumber(123, "1234-456"));
         joe.setFax(new PhoneNumber(123, "9999-999"));
@@ -46,8 +48,8 @@ public class XStreamTest {
         System.out.println("result = " + result);
     }
 
-
-    public static void test1() {
+    @Test
+    public void XML2Object() {
         // 拼接字符串
         StringBuffer sb = new StringBuffer();
         sb.append("<person>");
@@ -73,10 +75,6 @@ public class XStreamTest {
         //转为对象
         person = (Person) xStream.fromXML(xml);
         System.out.println("person = " + person);
-    }
-
-    public static void main(String[] args) throws Exception {
-        test1();
     }
 
 }
