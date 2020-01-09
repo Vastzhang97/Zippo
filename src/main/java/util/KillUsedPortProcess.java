@@ -14,6 +14,7 @@ public class KillUsedPortProcess {
 
     private static void before() {
         ports.add("80");
+        ports.add("8088");
     }
 
     private static void run() {
@@ -47,7 +48,6 @@ public class KillUsedPortProcess {
             } finally {
                 try {
                     reader.close();
-                    System.exit(0);
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
